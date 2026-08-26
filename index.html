@@ -9,197 +9,307 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     font-family: Arial, sans-serif;
 }
 body {
-    background: #0b0b12;
+    background: #07070b;
     color: white;
 }
+/* MENÜ */
 header {
-    padding: 25px 8%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #11111c;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background: rgba(7,7,11,0.85);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid #20202d;
 }
 .logo {
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.logo span {
+    color: #7c5cff;
 }
 nav a {
     color: white;
     text-decoration: none;
     margin-left: 25px;
+    font-weight: bold;
+    transition: .3s;
 }
+nav a:hover {
+    color: #7c5cff;
+}
+/* ANA SAYFA */
 .hero {
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 20px;
-    background: radial-gradient(circle at center, #24244a, #0b0b12 65%);
+    padding: 100px 20px 40px;
+    background:
+        radial-gradient(circle at 50% 40%, #292052, transparent 35%),
+        #07070b;
 }
 .hero h1 {
-    font-size: 65px;
-    margin-bottom: 15px;
+    font-size: clamp(50px, 9vw, 100px);
+    font-weight: 900;
+    animation: appear 1s ease;
 }
-.hero span {
-    color: #6c7cff;
+.hero h1 span {
+    color: #7c5cff;
 }
 .hero p {
+    margin-top: 20px;
+    color: #aaaaba;
     font-size: 20px;
-    color: #bdbdc9;
-    margin-bottom: 30px;
 }
 .button {
     display: inline-block;
-    padding: 14px 25px;
-    background: #6c7cff;
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 14px;
+    background: #7c5cff;
     color: white;
     text-decoration: none;
-    border-radius: 12px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: .3s;
+    box-shadow: 0 0 25px #7c5caa;
 }
 .button:hover {
-    transform: scale(1.08);
+    transform: translateY(-5px) scale(1.05);
 }
+/* GENEL */
 section {
-    padding: 70px 8%;
+    padding: 100px 7%;
 }
-h2 {
+.title {
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
+    font-size: 42px;
+    margin-bottom: 50px;
 }
+.title span {
+    color: #7c5cff;
+}
+/* KARTLAR */
 .cards {
     display: flex;
-    gap: 25px;
     justify-content: center;
+    gap: 25px;
     flex-wrap: wrap;
 }
 .card {
-    background: #151522;
-    width: 280px;
-    padding: 25px;
-    border-radius: 20px;
+    width: 290px;
+    padding: 30px;
     text-align: center;
-    transition: 0.3s;
-    border: 1px solid #25253a;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #15151f, #0e0e15);
+    border: 1px solid #272738;
+    transition: .4s;
 }
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
+    border-color: #7c5cff;
+    box-shadow: 0 15px 45px rgba(124,92,255,.2);
 }
-.icon {
+.card .emoji {
     font-size: 70px;
-    margin-bottom: 15px;
-}
-.card h3 {
-    margin-bottom: 10px;
-    font-size: 23px;
-}
-.card p {
-    color: #aaaab8;
     margin-bottom: 20px;
 }
+.card h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+.card p {
+    color: #9999a8;
+    line-height: 1.6;
+}
+/* HAKKIMDA */
 .about {
     text-align: center;
-    background: #10101a;
+    background: #0d0d14;
 }
-.about p {
-    max-width: 650px;
+.about-box {
+    max-width: 700px;
     margin: auto;
-    color: #bdbdc9;
-    line-height: 1.7;
+    padding: 40px;
+    border-radius: 25px;
+    background: #15151f;
+    border: 1px solid #28283a;
 }
+.about-box .avatar {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+.about-box p {
+    color: #aaaaba;
+    line-height: 1.8;
+    font-size: 17px;
+}
+/* İLETİŞİM */
+.contact {
+    text-align: center;
+}
+.contact p {
+    color: #aaaaba;
+    margin-top: 10px;
+}
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 25px;
-    background: #08080d;
+    padding: 30px;
     color: #777;
+    background: #050507;
+    border-top: 1px solid #171720;
 }
-@media(max-width:600px) {
-    .hero h1 {
-        font-size: 45px;
+/* ANİMASYON */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* TELEFON */
+@media(max-width: 650px) {
+    header {
+        padding: 15px 5%;
     }
     nav a {
-        margin-left: 10px;
-        font-size: 14px;
+        margin-left: 8px;
+        font-size: 13px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    section {
+        padding: 75px 5%;
+    }
+    .title {
+        font-size: 32px;
     }
 }
 </style>
 </head>
 <body>
 <header>
-    <div class="logo">YAQUB ⚡</div>
+    <div class="logo">YAQUB<span>⚡</span></div>
     <nav>
         <a href="#scooter">Scooter</a>
         <a href="#oyun">Oyun</a>
-        <a href="#hakkimda">Ben</a>
+        <a href="#ben">Ben</a>
     </nav>
 </header>
+<!-- ANA SAYFA -->
 <section class="hero">
     <div>
-        <h1>Merhaba, ben <span>Yaqub</span> 👋</h1>
+        <h1>YAQUB<span>.</span></h1>
         <p>🛴 Scooter • 🎮 Gaming • 💻 Teknoloji</p>
-        <a class="button" href="#scooter">Keşfet 🚀</a>
+        <a class="button" href="#scooter">
+            Siteyi Keşfet 🚀
+        </a>
     </div>
 </section>
+<!-- SCOOTER -->
 <section id="scooter">
-    <h2>🛴 Scooterlar</h2>
+    <h2 class="title">
+        🛴 <span>Scooter</span> Dünyası
+    </h2>
     <div class="cards">
         <div class="card">
-            <div class="icon">🛴</div>
-            <h3>Ninebot</h3>
-            <p>Şehir içinde eğlenceli ve pratik.</p>
-            <a class="button" href="#">Detay</a>
+            <div class="emoji">🛴</div>
+            <h3>Segway Ninebot</h3>
+            <p>
+                Şehir içinde eğlenceli ve modern
+                elektrikli scooterlar.
+            </p>
         </div>
         <div class="card">
-            <div class="icon">⚡</div>
+            <div class="emoji">⚡</div>
             <h3>Xiaomi</h3>
-            <p>Modern tasarım ve teknoloji.</p>
-            <a class="button" href="#">Detay</a>
+            <p>
+                Teknoloji ve şık tasarımın
+                birleşimi.
+            </p>
         </div>
         <div class="card">
-            <div class="icon">🔥</div>
-            <h3>Favorim</h3>
-            <p>En sevdiğim scooter modelleri.</p>
-            <a class="button" href="#">Detay</a>
+            <div class="emoji">🔥</div>
+            <h3>Favorilerim</h3>
+            <p>
+                En sevdiğim scooter modellerini
+                burada paylaşacağım.
+            </p>
         </div>
     </div>
 </section>
+<!-- OYUN -->
 <section id="oyun">
-    <h2>🎮 Oyunlar</h2>
+    <h2 class="title">
+        🎮 <span>Gaming</span>
+    </h2>
     <div class="cards">
         <div class="card">
-            <div class="icon">🔫</div>
+            <div class="emoji">🎯</div>
             <h3>Fortnite</h3>
-            <p>Savaş, eğlen ve kazan!</p>
-            <a class="button" href="#">Oyna</a>
+            <p>
+                Savaş, inşa et ve Victory Royale
+                almaya çalış!
+            </p>
         </div>
         <div class="card">
-            <div class="icon">🚗</div>
+            <div class="emoji">🏎️</div>
             <h3>Racing</h3>
-            <p>Hızlı arabalar ve yarışlar.</p>
-            <a class="button" href="#">Oyna</a>
+            <p>
+                Hızlı arabalar ve heyecanlı
+                yarışlar.
+            </p>
         </div>
         <div class="card">
-            <div class="icon">🎯</div>
-            <h3>Gaming</h3>
-            <p>En sevdiğim oyunlar burada.</p>
-            <a class="button" href="#">Keşfet</a>
+            <div class="emoji">🎮</div>
+            <h3>Diğer Oyunlar</h3>
+            <p>
+                En sevdiğim oyunları zamanla
+                buraya ekleyeceğim.
+            </p>
         </div>
     </div>
 </section>
-<section class="about" id="hakkimda">
-    <h2>👤 Ben Kimim?</h2>
+<!-- BEN -->
+<section class="about" id="ben">
+    <h2 class="title">
+        👤 <span>Ben Kimim?</span>
+    </h2>
+    <div class="about-box">
+        <div class="avatar">😎</div>
+        <p>
+            Merhaba! Ben Yaqub.
+            Scooterları, oyunları ve teknolojiyi
+            seviyorum. Bu siteyi kendi
+            projelerimi ve favorilerimi
+            paylaşmak için yaptım.
+        </p>
+    </div>
+</section>
+<!-- İLETİŞİM -->
+<section class="contact">
+    <h2 class="title">
+        🚀 <span>Yakında Daha Fazlası</span>
+    </h2>
     <p>
-        Ben Yaqub. Scooterları, oyunları ve teknolojiyi seviyorum.
-        Bu siteyi kendi projelerimi ve favorilerimi paylaşmak için yaptım. 🚀
+        Siteye yeni scooterlar, oyunlar ve
+        özellikler eklenecek.
     </p>
 </section>
 <footer>
