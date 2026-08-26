@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yaqub | Scooter & Gaming</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #0b0b12;
+    color: white;
+}
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #11111c;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, #24244a, #0b0b12 65%);
+}
+.hero h1 {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+.hero span {
+    color: #6c7cff;
+}
+.hero p {
+    font-size: 20px;
+    color: #bdbdc9;
+    margin-bottom: 30px;
+}
+.button {
+    display: inline-block;
+    padding: 14px 25px;
+    background: #6c7cff;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.button:hover {
+    transform: scale(1.08);
+}
+section {
+    padding: 70px 8%;
+}
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.cards {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card {
+    background: #151522;
+    width: 280px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #25253a;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+.icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+.card p {
+    color: #aaaab8;
+    margin-bottom: 20px;
+}
+.about {
+    text-align: center;
+    background: #10101a;
+}
+.about p {
+    max-width: 650px;
+    margin: auto;
+    color: #bdbdc9;
+    line-height: 1.7;
+}
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #08080d;
+    color: #777;
+}
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 45px;
+    }
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">YAQUB ⚡</div>
+    <nav>
+        <a href="#scooter">Scooter</a>
+        <a href="#oyun">Oyun</a>
+        <a href="#hakkimda">Ben</a>
+    </nav>
+</header>
+<section class="hero">
+    <div>
+        <h1>Merhaba, ben <span>Yaqub</span> 👋</h1>
+        <p>🛴 Scooter • 🎮 Gaming • 💻 Teknoloji</p>
+        <a class="button" href="#scooter">Keşfet 🚀</a>
+    </div>
+</section>
+<section id="scooter">
+    <h2>🛴 Scooterlar</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🛴</div>
+            <h3>Ninebot</h3>
+            <p>Şehir içinde eğlenceli ve pratik.</p>
+            <a class="button" href="#">Detay</a>
+        </div>
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Xiaomi</h3>
+            <p>Modern tasarım ve teknoloji.</p>
+            <a class="button" href="#">Detay</a>
+        </div>
+        <div class="card">
+            <div class="icon">🔥</div>
+            <h3>Favorim</h3>
+            <p>En sevdiğim scooter modelleri.</p>
+            <a class="button" href="#">Detay</a>
+        </div>
+    </div>
+</section>
+<section id="oyun">
+    <h2>🎮 Oyunlar</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🔫</div>
+            <h3>Fortnite</h3>
+            <p>Savaş, eğlen ve kazan!</p>
+            <a class="button" href="#">Oyna</a>
+        </div>
+        <div class="card">
+            <div class="icon">🚗</div>
+            <h3>Racing</h3>
+            <p>Hızlı arabalar ve yarışlar.</p>
+            <a class="button" href="#">Oyna</a>
+        </div>
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Gaming</h3>
+            <p>En sevdiğim oyunlar burada.</p>
+            <a class="button" href="#">Keşfet</a>
+        </div>
+    </div>
+</section>
+<section class="about" id="hakkimda">
+    <h2>👤 Ben Kimim?</h2>
+    <p>
+        Ben Yaqub. Scooterları, oyunları ve teknolojiyi seviyorum.
+        Bu siteyi kendi projelerimi ve favorilerimi paylaşmak için yaptım. 🚀
+    </p>
+</section>
+<footer>
+    © 2026 Yaqub • Scooter & Gaming
+</footer>
+</body>
+</html>
